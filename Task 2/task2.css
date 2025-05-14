@@ -1,0 +1,331 @@
+/* ------------------- */
+/* 1. IMPORT FONTS     */
+/* ------------------- */
+
+/* TEKO FONT */
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+
+/* LATO FONT */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+/* ------------------- */
+/* 2. BASE / RESET     */
+/* ------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ------------------- */
+/* 3. TYPOGRAPHY       */
+/* ------------------- */
+
+h1, a, button {
+    font-family: "Teko", serif;
+    font-style: normal;
+}
+
+p {
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+}
+
+
+/* ------------------- */
+/* 4. VARIABLES        */
+/* ------------------- */
+
+:root {
+    --small-spacing: 1rem;
+    --large-spacing-laptop: 3rem;
+    --large-spacing-tablet: 2rem;
+    --large-spacing-phone: 1rem;
+
+    --header-font-phone: 2em;
+    --header-font-tab-desk: 3em;
+    --button-font: 2em;
+    --movie-cont-font: 1.5em;
+
+    --hover-color: #4dccbd;
+    --bg-color: #231651;
+    --text-color: #ffffff;
+    --text-color-2: #070410;
+    --shadow: #EEF36A;
+}
+
+
+/* ------------------- */
+/* 5. GENERAL LAYOUT   */
+/* ------------------- */
+
+body {
+    background-color: var(--text-color-2);
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ------------------- */
+/* 6. HEADER & NAV     */
+/* ------------------- */
+
+header {
+    width: 100%;
+    padding: var(--small-spacing);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-color);      
+    color: var(--text-color);
+    box-shadow: 0.1rem var(--small-spacing) 0.5rem var(--shadow);
+}
+
+header .title {
+    font-size: var(--header-font-tab-desk);
+    color: var(--text-color);
+    font-family: "Teko", serif;
+}
+
+header button {
+    font-size: var(--header-font-tab-desk);
+    font-family: "Teko", serif;
+    border: none;
+    border-radius: var(--small-spacing);
+    height: fit-content;
+    transition: 0.3s ease-in-out;
+}
+
+header button a {
+    color: var(--text-color-2);
+    text-decoration: none;
+    padding: var(--large-spacing-laptop);
+    box-sizing: border-box;
+}
+
+header button:hover {
+    background-color: var(--hover-color);
+}
+
+nav {
+    font-family: "Teko", serif;
+    font-weight: 500;
+    overflow: hidden;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    padding: var(--small-spacing);
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 2em;
+    transition: 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: var(--hover-color);
+}
+
+
+/* ------------------- */
+/* 7. MAIN GRID LAYOUT */
+/* ------------------- */
+
+main {
+    max-width: 900px;
+    margin: var(--large-spacing-laptop) auto;
+    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+        "poster3 poster3"
+        "poster1 poster2"
+        "poster5 poster5"
+        "poster6 poster6"
+        "poster4 poster4";
+}
+
+
+/* --------------------------- */
+/* 8. POSTER CONTAINER STYLES */
+/* --------------------------- */
+
+.poster-cont-main {
+    background-color: var(--bg-color);
+    box-shadow: 1rem 1rem 0.5rem var(--shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: space-between;
+    margin: var(--small-spacing);
+}
+
+.poster-cont-main img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.poster-cont-main div {
+    padding: var(--small-spacing);
+}
+
+.poster-cont-main p {
+    color: var(--text-color);
+    font-size: var(--movie-cont-font);
+}
+
+.poster-cont-main button {
+    padding: var(--small-spacing);
+    width: 100%;
+    background-color: var(--text-color);
+    border: none;
+    border-radius: var(--small-spacing);
+    cursor: pointer;
+    font-size: 3em;
+    transition: 0.3s ease-in-out;
+}
+
+.poster-cont-main button:hover {
+    background-color: var(--hover-color);
+}
+
+.poster-cont-main button a {
+    text-decoration: none;
+    color: var(--text-color-2);
+}
+
+
+/* --------------------------- */
+/* 9. INDIVIDUAL POSTER AREAS */
+/* --------------------------- */
+
+.poster-one    { grid-area: poster1; }
+.poster-two    { grid-area: poster2; }
+.poster-three  { grid-area: poster3; }
+.poster-four   { grid-area: poster4; }
+.poster-five   { grid-area: poster5; }
+.poster-six    { grid-area: poster6; }
+
+.poster-one {
+    display: flex;
+    flex-direction: column;
+}
+
+.poster-one img {
+    height: 25rem;
+}
+
+.poster-one .bot {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+
+.poster-four,
+.poster-five,
+.poster-six {
+    display: flex;
+    flex-direction: row;
+}
+
+.poster-four img,
+.poster-five img,
+.poster-six img {
+    width: 45%;
+}
+
+.poster-four .bot,
+.poster-five .bot,
+.poster-six .bot {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--small-spacing);
+    text-align: left;
+}
+
+
+/* --------------------------- */
+/* 10. MEDIA QUERIES          */
+/* --------------------------- */
+
+@media screen and (max-width: 720px) {
+    header {
+        font-size: 0.6em;
+    }
+
+    header button {
+        border-radius: 0.5rem;
+    }
+
+    nav {
+        padding: 0.5rem;
+        font-size: 1em;
+    }
+
+    main {
+        margin: var(--large-spacing-tablet) auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "poster3 poster1"
+            "poster2 poster5"
+            "poster6 poster4";
+    }
+
+    .poster-cont-main {
+        box-shadow: 0.5rem 0.5rem 0.5rem var(--shadow);
+        align-items: center;
+    }
+
+    .poster-one .bot {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    header {
+        font-size: 0.5rem;
+    }
+
+    nav {
+        display: none;
+    }
+
+    header button {
+        padding: 0.75rem 0.125rem;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "poster3"
+            "poster1"
+            "poster2"
+            "poster5"
+            "poster6"
+            "poster4";
+        justify-items: center;
+        margin: 0 auto;
+    }
+
+    .poster-cont-main {
+        box-shadow: 0.5rem 0.5rem 0.5rem var(--shadow);
+        width: 100%;
+    }
+
+    .poster-cont-main div {
+        flex: 1;
+    }
+}
