@@ -1,10 +1,11 @@
-/* General Reset */
+/* General Reset: Removes default browser spacing and sets box-sizing for consistency */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* BODY: Applies the base font and background for the whole page */
 body {
     font-family: 'Josefin Sans', sans-serif;
     color: #333;
@@ -12,7 +13,7 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Header Section */
+/* HEADER: Styles the top section with nav and logo */
 .header {
     display: flex;
     flex-direction: column;
@@ -22,6 +23,7 @@ body {
     position: relative;
 }
 
+/* LOGO: Positions and styles the logo image in the header */
 .logo {
     position: absolute;
     top: 20px;
@@ -37,6 +39,7 @@ body {
     color: #555;
 }
 
+/* NAVIGATION LINKS: Arranges the links with spacing and styles */
 .nav-links {
     display: flex;
     gap: 300px;
@@ -44,6 +47,7 @@ body {
     margin-bottom: 2rem;
 }
 
+/* NAVIGATION LINKS: Styles for the actual navigation anchor tags */
 .nav-links a {
     text-decoration: none;
     color: #333;
@@ -51,14 +55,14 @@ body {
     font-size: 1em;
 }
 
-/* Main Content Section */
+/* MAIN CONTENT: Restricts width and centers the main content */
 .main-content {
     max-width: 900px;
     margin: 5rem auto;
     padding: 0 2rem;
 }
 
-/* Title Section */
+/* TITLE SECTION: Styles for the headline and intro paragraph */
 .title-section {
     text-align: left;
     display: flex;
@@ -77,18 +81,15 @@ body {
     color: #555;
 }
 .title-section p {
-    font-size: 1.4em; /* Adjust this value as desired */
-    line-height: 1.6; /* Optional: Adjust line height for readability */
-    color: #000000; /* Optional: Change color if needed */
+    font-size: 1.4em; /* Makes intro paragraph larger for emphasis */
+    line-height: 1.6; /* Improves readability */
+    color: #000000; /* Ensures strong contrast */
 }
 
-/* Article Content */
-
-
-
+/* ARTICLE CONTENT: Uses columns for a magazine-like layout */
 .content {
-    column-count: 2; /* Adjust the number of columns as desired */
-    column-gap: 30px; /* Adjust the gap between columns */
+    column-count: 2; /* Sets number of columns */
+    column-gap: 30px; /* Spacing between columns */
     text-align: justify;
 }
 
@@ -104,9 +105,7 @@ body {
     text-align: justify;
 }
 
-/* Album Covers Section */
-
-
+/* ALBUM COVERS: Creates a grid layout for album images */
 .featured-album {
     --gap: 16px;
     --num-cols: 4;
@@ -121,11 +120,14 @@ body {
     gap: var(--gap);
 }
 
+/* ALBUM IMAGES: Ensures images fill their grid cells */
 .featured-album > img {
     width: 100%;
     height: 100%;
     object-fit:cover;
 }
+
+/* ALBUM IMAGE STRETCH: Expands the first album image to cover more columns */
 .featured-album-col-2{
     grid-column: span 2;
     }
@@ -133,15 +135,15 @@ body {
     grid-column: span 2;
     }
 
+/* ALBUM GRID RESPONSIVE: Changes layout for smaller screens */
 @media  screen and (max-width: 1024px) {
     .featured-album{
     --num-cols:2;
---row-height:200px;
-}
+    --row-height:200px;
+    }
 }
 
-
-/* Author Section */
+/* AUTHOR SECTION: Styles for the author bio at the end of the page */
 .author-section {
     display: flex;
     flex-direction: column;
@@ -175,7 +177,7 @@ body {
     text-align: justify;
 }
 
-/* Footer */
+/* FOOTER: Styles for the page footer at the bottom */
 .footer {
     text-align: center;
     padding: 2rem 0;
@@ -185,23 +187,20 @@ body {
     margin-top: 3rem;
 }
 
-/* Default styles for desktop devices */
-
+/* CONTAINER: Restricts content width for desktop devices */
 .container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Styles for tablet devices */
-
+/* TABLET RESPONSIVE: Adjusts container width on tablets */
 @media (max-width: 768px) {
   .container {
     max-width: 90%;
   }
 }
 
-/* Styles for mobile devices */
-
+/* MOBILE RESPONSIVE: Makes container and header more compact on mobile screens */
 @media (max-width: 480px) {
   .container {
     max-width: 100%;

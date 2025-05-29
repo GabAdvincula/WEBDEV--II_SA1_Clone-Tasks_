@@ -1,29 +1,27 @@
-/* ------------------- */
-/* 1. IMPORT FONTS     */
-/* ------------------- */
-
-/* TEKO FONT */
+/* 
+    FONT IMPORTS: 
+    - Teko for headings, links, and buttons 
+    - Lato for normal paragraph text 
+*/
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
-
-/* LATO FONT */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-
-/* ------------------- */
-/* 2. BASE / RESET     */
-/* ------------------- */
-
+/* 
+    CSS RESET: 
+    - Remove default margin and padding 
+    - Set box-sizing for consistent layout calculations 
+*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-/* ------------------- */
-/* 3. TYPOGRAPHY       */
-/* ------------------- */
-
+/* 
+    TEXT STYLES: 
+    - Teko for headers, links, buttons 
+    - Lato for paragraphs 
+*/
 h1, a, button {
     font-family: "Teko", serif;
     font-style: normal;
@@ -34,11 +32,10 @@ p {
     font-style: normal;
 }
 
-
-/* ------------------- */
-/* 4. VARIABLES        */
-/* ------------------- */
-
+/*
+    ROOT VARIABLES: 
+    - For easy color, spacing, and font size management throughout the stylesheet 
+*/
 :root {
     --small-spacing: 1rem;
     --large-spacing-laptop: 3rem;
@@ -58,21 +55,20 @@ p {
 }
 
 
-/* ------------------- */
-/* 5. GENERAL LAYOUT   */
-/* ------------------- */
 
+/* Set background and remove default spacing for the page */
 body {
     background-color: var(--text-color-2);
     margin: 0;
     padding: 0;
 }
 
-
-/* ------------------- */
-/* 6. HEADER & NAV     */
-/* ------------------- */
-
+/* 
+    HEADER STYLES: 
+    - Flexbox layout
+    - Brand color and shadow
+    - Space for title, nav, and search button 
+*/
 header {
     width: 100%;
     padding: var(--small-spacing);
@@ -84,12 +80,14 @@ header {
     box-shadow: 0.1rem var(--small-spacing) 0.5rem var(--shadow);
 }
 
+/* Title in the header uses the custom font and color */
 header .title {
     font-size: var(--header-font-tab-desk);
     color: var(--text-color);
     font-family: "Teko", serif;
 }
 
+/* Styles for the search button on the right */
 header button {
     font-size: var(--header-font-tab-desk);
     font-family: "Teko", serif;
@@ -99,6 +97,7 @@ header button {
     transition: 0.3s ease-in-out;
 }
 
+/* The search link inside the button */
 header button a {
     color: var(--text-color-2);
     text-decoration: none;
@@ -106,10 +105,15 @@ header button a {
     box-sizing: border-box;
 }
 
+/* Button hover effect provides feedback */
 header button:hover {
     background-color: var(--hover-color);
 }
 
+/* NAVIGATION: 
+    - Uses Teko font 
+    - Horizontal flex styling 
+*/
 nav {
     font-family: "Teko", serif;
     font-weight: 500;
@@ -125,6 +129,10 @@ nav li {
     padding: var(--small-spacing);
 }
 
+/* 
+    NAV LINKS: 
+    - Large, bold, and interactive 
+*/
 nav ul li a {
     text-decoration: none;
     color: var(--text-color);
@@ -137,10 +145,11 @@ nav ul li a:hover {
 }
 
 
-/* ------------------- */
-/* 7. MAIN GRID LAYOUT */
-/* ------------------- */
-
+/* 
+    Main area uses CSS Grid 
+    - Arranges poster sections responsively 
+    - Max width for readability 
+*/
 main {
     max-width: 900px;
     margin: var(--large-spacing-laptop) auto;
@@ -156,10 +165,12 @@ main {
 }
 
 
-/* --------------------------- */
-/* 8. POSTER CONTAINER STYLES */
-/* --------------------------- */
 
+/* 
+    Shared styles for all poster containers 
+    - Card-like effect with shadow 
+    - Flex column to stack image and text 
+*/
 .poster-cont-main {
     background-color: var(--bg-color);
     box-shadow: 1rem 1rem 0.5rem var(--shadow);
@@ -171,21 +182,28 @@ main {
     margin: var(--small-spacing);
 }
 
+/* Poster images fill container width and keep aspect ratio */
 .poster-cont-main img {
     width: 100%;
     height: auto;
     object-fit: cover;
 }
 
+/* Padding for the inner content of each poster card */
 .poster-cont-main div {
     padding: var(--small-spacing);
 }
 
+/* Movie description text style */
 .poster-cont-main p {
     color: var(--text-color);
     font-size: var(--movie-cont-font);
 }
 
+/* 
+    WATCH NOW Button 
+    - Large, full-width, interactive 
+*/
 .poster-cont-main button {
     padding: var(--small-spacing);
     width: 100%;
@@ -197,20 +215,23 @@ main {
     transition: 0.3s ease-in-out;
 }
 
+/* Button hover color for feedback */
 .poster-cont-main button:hover {
     background-color: var(--hover-color);
 }
 
+/* Button link uses contrasting color */
 .poster-cont-main button a {
     text-decoration: none;
     color: var(--text-color-2);
 }
 
 
-/* --------------------------- */
-/* 9. INDIVIDUAL POSTER AREAS */
-/* --------------------------- */
 
+/* 
+    Grid area assignments for each poster
+    - Allows for custom arrangement in the grid
+*/
 .poster-one    { grid-area: poster1; }
 .poster-two    { grid-area: poster2; }
 .poster-three  { grid-area: poster3; }
@@ -218,6 +239,11 @@ main {
 .poster-five   { grid-area: poster5; }
 .poster-six    { grid-area: poster6; }
 
+/* 
+    Poster One: 
+    - Column layout with tall image
+    - Text beside or below image for flexibility
+*/
 .poster-one {
     display: flex;
     flex-direction: column;
@@ -233,6 +259,7 @@ main {
     text-align: left;
 }
 
+/* Posters 4, 5, 6 use row layout for larger screens */
 .poster-four,
 .poster-five,
 .poster-six {
@@ -246,6 +273,10 @@ main {
     width: 45%;
 }
 
+/* 
+    Info block in posters 4, 5, 6: 
+    - Column layout and padding for visual clarity 
+*/
 .poster-four .bot,
 .poster-five .bot,
 .poster-six .bot {
@@ -257,10 +288,12 @@ main {
 }
 
 
-/* --------------------------- */
-/* 10. MEDIA QUERIES          */
-/* --------------------------- */
 
+/* 
+    TABLET LAYOUT ADJUSTMENTS: 
+    - Smaller font, rearrange grid, smaller shadows 
+    - Stack text in poster one vertically for smaller screens 
+*/
 @media screen and (max-width: 720px) {
     header {
         font-size: 0.6em;
@@ -294,6 +327,12 @@ main {
     }
 }
 
+/*
+    MOBILE LAYOUT ADJUSTMENTS: 
+    - Stack everything in a single column
+    - Hide navigation for simplicity
+    - Box shadows and padding are smaller for space efficiency 
+*/
 @media screen and (max-width: 360px) {
     header {
         font-size: 0.5rem;
